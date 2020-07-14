@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="63.不同路径II, qzy的小窝">
+    <meta name="keywords" content="91 解码方法, qzy的小窝">
     <meta name="description" content="C/C++ Python">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>63.不同路径II | qzy的小窝</title>
+    <title>91 解码方法 | qzy的小窝</title>
     <link rel="icon" type="image/jpeg" href="/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -244,12 +244,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">63.不同路径II</h1>
+                    <h1 class="description center-align post-title">91 解码方法</h1>
                 </div>
             </div>
         </div>
@@ -378,7 +378,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-07-14
                 </div>
                 
 
@@ -394,13 +394,17 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">问题描述:</span><br><span class="line">一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。</span><br><span class="line">机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。</span><br><span class="line">现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？</span><br></pre></td></tr></table></figure>
+                <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">一条包含字母 A-Z 的消息通过以下方式进行了编码：</span><br><span class="line"></span><br><span class="line">'A' -&gt; 1</span><br><span class="line">'B' -&gt; 2</span><br><span class="line">...</span><br><span class="line">'Z' -&gt; 26</span><br><span class="line">给定一个只包含数字的非空字符串，请计算解码方法的总数。</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sample:</span><br><span class="line">输入:</span><br><span class="line">[</span><br><span class="line">  [0,0,0],</span><br><span class="line">  [0,1,0],</span><br><span class="line">  [0,0,0]</span><br><span class="line">]</span><br><span class="line">输出: 2</span><br><span class="line">解释:</span><br><span class="line">3x3 网格的正中间有一个障碍物。</span><br><span class="line">从左上角到右下角一共有 2 条不同的路径：</span><br><span class="line"><span class="bullet">1. </span>向右 -&gt; 向右 -&gt; 向下 -&gt; 向下</span><br><span class="line"><span class="bullet">2. </span>向下 -&gt; 向下 -&gt; 向右 -&gt; 向右</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">示例 1:</span><br><span class="line">输入: "12"</span><br><span class="line">输出: 2</span><br><span class="line">解释: 它可以解码为 "AB"（1 2）或者 "L"（12）。</span><br><span class="line"></span><br><span class="line">示例 2:</span><br><span class="line">输入: "226"</span><br><span class="line">输出: 3</span><br><span class="line">解释: 它可以解码为 "BZ" (2 26), "VF" (22 6), 或者 "BBF" (2 2 6) 。</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; obstacleGrid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m=obstacleGrid.<span class="built_in">size</span>(), n=obstacleGrid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;&gt; <span class="title">dp</span><span class="params">(m+<span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;(n+<span class="number">1</span>))</span></span>;</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(obstacleGrid[i<span class="number">-1</span>][j<span class="number">-1</span>])&#123;</span><br><span class="line">                    dp[i][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    dp[i][j] = dp[i<span class="number">-1</span>][j] + dp[i][j<span class="number">-1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">思路解析：</span><br><span class="line">dp递推公式是比较显然的dp[<span class="string">i</span>][<span class="symbol">j</span>] = dp[<span class="string">i-1</span>][<span class="symbol">j</span>] + dp[<span class="string">i</span>][<span class="symbol">j-1</span>]</span><br><span class="line">但是边界上的初始化需要考虑清楚，若该方格值为1，这到该方格的路经数为0</span><br><span class="line">初始化dp[<span class="string">0</span>][<span class="symbol">1</span>] = 1 或 dp[<span class="string">1</span>][<span class="symbol">0</span>] = 1都可以(使得dp[<span class="string">1</span>][<span class="symbol">1</span>]能够正常初始化)</span><br></pre></td></tr></table></figure>
+
+<h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">容易想到一维动态规划</span><br><span class="line"><span class="bullet">1. </span>首先考虑边界情况: 第一个数字为0时，直接返回0</span><br><span class="line"><span class="bullet">2. </span>分析动态规划的递归公式</span><br><span class="line"><span class="code">	若s[i]为0， 则s[i-1]必为1或2 此时dp[i] = dp[i-2] (s[i-1]+s[i]必须捆绑在一起)</span></span><br><span class="line"><span class="code">			   否则 若s[i-1]为其他值则直接返回0</span></span><br><span class="line"><span class="code">	若s[i-1]为1， dp[i] = dp[i-1]+dp[i-2] (分开译码对应dp[i-1], 合并对应dp[i-2])</span></span><br><span class="line"><span class="code">	若s[i-1]为2， 且s[i]在1~6之间，同上</span></span><br><span class="line"><span class="code">	若s[i-1]为其他值， 不会出现合并的情况， dp[i] = dp[i-1]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numDecodings</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s[<span class="number">0</span>] == <span class="string">'0'</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> pre = <span class="number">1</span>, curr = <span class="number">1</span>;<span class="comment">//dp[-1] = dp[0] = 1</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = curr;</span><br><span class="line">            <span class="keyword">if</span> (s[i] == <span class="string">'0'</span>)</span><br><span class="line">                <span class="keyword">if</span> (s[i - <span class="number">1</span>] == <span class="string">'1'</span> || s[i - <span class="number">1</span>] == <span class="string">'2'</span>) curr = pre;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (s[i - <span class="number">1</span>] == <span class="string">'1'</span> || (s[i - <span class="number">1</span>] == <span class="string">'2'</span> &amp;&amp; s[i] &gt;= <span class="string">'1'</span> &amp;&amp; s[i] &lt;= <span class="string">'6'</span>))</span><br><span class="line">                curr = curr + pre;</span><br><span class="line">             pre = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> curr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
             </div>
@@ -427,7 +431,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://qzylalala.github.io/categories/Leetcode/63.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84II.html">https://qzylalala.github.io/categories/Leetcode/63.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84II.html</a>
+                    <a href="https://qzylalala.github.io/2020/07/14/91-%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95/">https://qzylalala.github.io/2020/07/14/91-%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -633,7 +637,7 @@
         repo: 'qzylalala.github.io',
         owner: 'qzylalala',
         admin: ["qzylalala"],
-        id: '2020-06-16T12-06-59',
+        id: '2020-07-14T20-18-21',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -662,24 +666,26 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/categories/Leetcode/63.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84II.html">
+                <a href="/2020/07/14/91-%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="63.不同路径II">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="91 解码方法">
                         
-                        <span class="card-title">63.不同路径II</span>
+                        <span class="card-title">91 解码方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1234问题描述:一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。现在考虑网格中有障碍物。那么从左上角
+                            1234567一条包含字母 A-Z 的消息通过以下方式进行了编码：'A' -&gt; 1'B' -&gt; 2...'Z' -&gt; 26给定一个只包含数字的非空字符串，请计算解码方法的总数。
+
+123456789示例 1:输入: "12
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-14
                             </span>
                         <span class="publish-author">
                             
@@ -697,10 +703,10 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/categories/Leetcode/63.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84II.html">
+                <a href="/2020/07/14/63.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84II/">
                     <div class="card-image">
                         
                         
@@ -717,7 +723,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-14
                             </span>
                         <span class="publish-author">
                             
@@ -727,7 +733,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

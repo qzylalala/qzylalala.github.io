@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Leetcode  32. Longest Valid Parentheses, qzy的小窝">
+    <meta name="keywords" content="63.不同路径II, qzy的小窝">
     <meta name="description" content="C/C++ Python">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode  32. Longest Valid Parentheses | qzy的小窝</title>
+    <title>63.不同路径II | qzy的小窝</title>
     <link rel="icon" type="image/jpeg" href="/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -244,12 +244,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Leetcode  32. Longest Valid Parentheses</h1>
+                    <h1 class="description center-align post-title">63.不同路径II</h1>
                 </div>
             </div>
         </div>
@@ -378,7 +378,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-15
+                    2020-07-14
                 </div>
                 
 
@@ -394,39 +394,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.</span><br></pre></td></tr></table></figure>
+                <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">问题描述:</span><br><span class="line">一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。</span><br><span class="line">机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。</span><br><span class="line">现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">Input: "(()"</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: The longest valid parentheses substring is "()"</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sample:</span><br><span class="line">输入:</span><br><span class="line">[</span><br><span class="line">  [0,0,0],</span><br><span class="line">  [0,1,0],</span><br><span class="line">  [0,0,0]</span><br><span class="line">]</span><br><span class="line">输出: 2</span><br><span class="line">解释:</span><br><span class="line">3x3 网格的正中间有一个障碍物。</span><br><span class="line">从左上角到右下角一共有 2 条不同的路径：</span><br><span class="line"><span class="bullet">1. </span>向右 -&gt; 向右 -&gt; 向下 -&gt; 向下</span><br><span class="line"><span class="bullet">2. </span>向下 -&gt; 向下 -&gt; 向右 -&gt; 向右</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Example 2:</span><br><span class="line">Input: ")()())"</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: The longest valid parentheses substring is "()()"</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; obstacleGrid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m=obstacleGrid.<span class="built_in">size</span>(), n=obstacleGrid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;&gt; <span class="title">dp</span><span class="params">(m+<span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;(n+<span class="number">1</span>))</span></span>;</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(obstacleGrid[i<span class="number">-1</span>][j<span class="number">-1</span>])&#123;</span><br><span class="line">                    dp[i][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    dp[i][j] = dp[i<span class="number">-1</span>][j] + dp[i][j<span class="number">-1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p> <a href="https://leetcode.com/problems/longest-valid-parentheses/" target="_blank" rel="noopener">原题链接</a></p>
-<h3 id="2-题解代码"><a href="#2-题解代码" class="headerlink" title="2. 题解代码"></a>2. 题解代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">longestValidParentheses</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length(), longest = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; tmp;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[i] == <span class="string">'('</span>) </span><br><span class="line">                tmp.push(i);</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!tmp.empty()) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s[tmp.top()] == <span class="string">'('</span>) </span><br><span class="line">                        tmp.pop();</span><br><span class="line">                    <span class="keyword">else</span> tmp.push(i);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> </span><br><span class="line">                    tmp.push(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (tmp.empty()) </span><br><span class="line">            longest = n;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> a = n, b = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (!tmp.empty()) &#123;</span><br><span class="line">                b = tmp.top(); </span><br><span class="line">                tmp.pop();</span><br><span class="line">                longest = <span class="built_in">max</span>(longest, a - b - <span class="number">1</span>);</span><br><span class="line">                a = b;</span><br><span class="line">            &#125;</span><br><span class="line">            longest = <span class="built_in">max</span>(longest, a);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> longest;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">思路解析：</span><br><span class="line">dp递推公式是比较显然的dp[<span class="string">i</span>][<span class="symbol">j</span>] = dp[<span class="string">i-1</span>][<span class="symbol">j</span>] + dp[<span class="string">i</span>][<span class="symbol">j-1</span>]</span><br><span class="line">但是边界上的初始化需要考虑清楚，若该方格值为1，这到该方格的路经数为0</span><br><span class="line">初始化dp[<span class="string">0</span>][<span class="symbol">1</span>] = 1 或 dp[<span class="string">1</span>][<span class="symbol">0</span>] = 1都可以(使得dp[<span class="string">1</span>][<span class="symbol">1</span>]能够正常初始化)</span><br></pre></td></tr></table></figure>
 
-
-
-<h3 id="3-代码思路分析"><a href="#3-代码思路分析" class="headerlink" title="3. 代码思路分析"></a>3. 代码思路分析</h3><ul>
-<li><p>第一部分</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[i] == <span class="string">'('</span>) </span><br><span class="line">                tmp.push(i);</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!tmp.empty()) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s[tmp.top()] == <span class="string">'('</span>) </span><br><span class="line">                        tmp.pop();</span><br><span class="line">                    <span class="keyword">else</span> tmp.push(i);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> </span><br><span class="line">                    tmp.push(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<p>扫一遍<code>string</code></p>
-<ol>
-<li>如果遇到<code>&#39;(&#39;</code>则将其对应的索引<code>i</code>入栈</li>
-<li>如果遇到<code>&#39;)&#39;</code>  （栈空直接将索引<code>i</code>入栈）<ol>
-<li>若此时栈顶的索引所对应的字符为<code>&#39;(&#39;</code>，我们就找到了一对匹配的字符，则出栈</li>
-<li>否则， 我们将这个<code>&#39;(&#39;</code>对应的索引<code>i</code>入栈</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><p>第二部分</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (tmp.empty()) </span><br><span class="line">            longest = n;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> a = n, b = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (!tmp.empty()) &#123;</span><br><span class="line">                b = tmp.top(); </span><br><span class="line">                tmp.pop();</span><br><span class="line">                longest = <span class="built_in">max</span>(longest, a - b - <span class="number">1</span>);</span><br><span class="line">                a = b;</span><br><span class="line">            &#125;</span><br><span class="line">            longest = <span class="built_in">max</span>(longest, a);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里其实是解题思路的体现， 在第一部分操作结束后， 此时的栈中元素为那些无法matching的字符的索引(而且是递增的)， 此时栈中两相邻索引之间的索引所对应原<code>string</code>的部分就是一个<strong>Valid Parentheses</strong>。栈中相邻两索引设为a， b， 则<code>a - b - 1</code>是长度， 选择其中最大的即为所求</p>
-</li>
-</ul>
 
             </div>
             <hr/>
@@ -452,7 +427,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://qzylalala.github.io/categories/Leetcode/Leetcode-32.-Longest-Valid-Parentheses.html">https://qzylalala.github.io/categories/Leetcode/Leetcode-32.-Longest-Valid-Parentheses.html</a>
+                    <a href="https://qzylalala.github.io/2020/07/14/63.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84II/">https://qzylalala.github.io/2020/07/14/63.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84II/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -658,7 +633,7 @@
         repo: 'qzylalala.github.io',
         owner: 'qzylalala',
         admin: ["qzylalala"],
-        id: '2020-02-15T20-57-18',
+        id: '2020-07-14T20-18-21',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -682,30 +657,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/categories/Leetcode/Leetcode-32.-Longest-Valid-Parentheses.html">
+                <a href="/2020/07/14/91-%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Leetcode  32. Longest Valid Parentheses">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="91 解码方法">
                         
-                        <span class="card-title">Leetcode  32. Longest Valid Parentheses</span>
+                        <span class="card-title">91 解码方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 问题描述1Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) pa
+                            1234567一条包含字母 A-Z 的消息通过以下方式进行了编码：'A' -&gt; 1'B' -&gt; 2...'Z' -&gt; 26给定一个只包含数字的非空字符串，请计算解码方法的总数。
+
+123456789示例 1:输入: "12
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -714,7 +690,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -722,27 +697,27 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/categories/Leetcode/Leetcode-32.-Longest-Valid-Parentheses.html">
+                <a href="/2020/07/13/article-title/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Leetcode  32. Longest Valid Parentheses">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="article title">
                         
-                        <span class="card-title">Leetcode  32. Longest Valid Parentheses</span>
+                        <span class="card-title">article title</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 问题描述1Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) pa
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-13
                             </span>
                         <span class="publish-author">
                             
@@ -752,7 +727,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
